@@ -4,4 +4,5 @@ export interface product {
     precio: number;
     image: string;
     clearance: boolean;
+    quantity: number;
 }

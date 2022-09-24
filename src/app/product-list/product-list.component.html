@@ -2,17 +2,27 @@
     <thead>
         <tr>
             <th>Producto</th>
-            <th>Stock</th>
+            <th class="text-center">Stock</th>
             <th class="text-center">Precio</th>
             <th></th>
+            <th class="text-center">Compra</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let product of products" [ngClass]="{'clearance': product.clearance}">
             <td>{{product.nombre}}</td>
-            <td><span class="badge bg-warning" *ngIf="product.stock==0">Sin stock</span></td>
-            <td class="text-center">{{product.precio | currency}}</td>
+            <td class="text-center">
+                <span class="badge bg-warning" *ngIf="product.stock==0">Sin stock</span>
+            </td>
+            <td class="text-center">
+                {{product.precio | currency}}
+            </td>
             <td><img [src]="product.image" [alt]="product.nombre" /></td>
+            <td class="col-2 text-center">
+                <button class="btn btn-info btn-sm p-1" (click)="downQuantity(product)">-</button>
+                {{product.quantity}}
+                <button class="btn btn-info btn-sm p-1" (click)="upQuantity(product)">+</button>
+            </td>
         </tr>
     </tbody>
 </table>
