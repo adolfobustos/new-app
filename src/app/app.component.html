@@ -25,7 +25,7 @@
     <nav>
       <ul>
         <!-- Home -->
-        <li><a href="" type="button" class="btn btn-outline-light">
+        <li><a [routerLink]="['/']" type="button" class="btn btn-outline-light">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" fill="currentColor" class="bi bi-house-door"
               viewBox="0 0 16 16">
               <path
@@ -33,7 +33,7 @@
             </svg>
           </a></li>
         <!-- Cart -->
-        <li><a href="" type="button" class="btn btn-outline-light">
+        <li><a [routerLink]="['/cart']" type="button" class="btn btn-outline-light">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" fill="currentColor" class="bi bi-cart3"
               viewBox="0 0 16 16">
               <path
@@ -41,7 +41,7 @@
             </svg>
           </a></li>
         <!-- User -->
-        <li><a href="" type="button" class="btn btn-outline-light">
+        <li><a [routerLink]="['/user']" type="button" class="btn btn-outline-light">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" fill="currentColor"
               class="bi bi-person-circle" viewBox="0 0 16 16">
               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -53,15 +53,8 @@
     </nav>
   </header>
 
-  <!-- Products - Cart -->
-  <div class="container">
-    <div class="row">
-      <div class="col-8">
-        <app-product-list></app-product-list>
-      </div>
-      <div class="col-4">Carrito</div>
-    </div>
-  </div>
+  <!-- Router Home - Cart - User -->
+  <router-outlet></router-outlet>
 
   <footer>
     <!-- Facebook -->
