@@ -19,9 +19,11 @@
             </td>
             <td><img [src]="product.image" [alt]="product.nombre" /></td>
             <td class="col-2 text-center">
-                <button class="btn btn-info btn-sm p-1" (click)="downQuantity(product)">-</button>
-                {{product.quantity}}
-                <button class="btn btn-info btn-sm p-1" (click)="upQuantity(product)">+</button>
+                <div *ngIf="product.stock">
+                    <button class="btn btn-info btn-sm p-1" (click)="downQuantity(product)">-</button>
+                    {{product.quantity}}
+                    <button class="btn btn-info btn-sm p-1" (click)="upQuantity(product)">+</button>
+                </div>
             </td>
         </tr>
     </tbody>
