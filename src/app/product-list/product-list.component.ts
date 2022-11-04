@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductCartService } from '../product-cart.service';
 import { product } from './product';
 
 @Component({
@@ -145,11 +146,16 @@ export class ProductListComponent implements OnInit {
       image: 'assets/images/products/Tostadas Dulce Criollitas 195gr.png',
       clearance: false,
       quantity: 0,
-    }
+    },
   ]
 
-  constructor() { }
+  constructor(private cart: ProductCartService) {
+  }
 
   ngOnInit(): void {
+  }
+
+  addToCart(product: product): void {
+    this.addToCart(product)
   }
 }
