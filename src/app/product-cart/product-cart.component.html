@@ -3,15 +3,13 @@
     <thead>
         <tr>
             <th>Producto</th>
-            <th class="text-center">Precio</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-            <td class="text-center"></td>
-            <td><img src="" alt=""></td>
+        <tr *ngFor="let product of cartList$ | async">
+            <td>{{product.nombre}}</td>
+            <td class="text-center">{{product.quantity}}</td>
         </tr>
     </tbody>
 </table>

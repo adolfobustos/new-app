@@ -152,10 +152,11 @@ export class ProductListComponent implements OnInit {
   constructor(private cart: ProductCartService) {
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  addToCart(product: product): void {
-    this.addToCart(product)
+  addToCart(product: any): void {
+    this.cart.addToCart(product);
+    product.stock -= product.quantity;
+    product.quantity = 0;
   }
 }
