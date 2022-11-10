@@ -19,10 +19,8 @@
             </td>
             <td><img [src]="product.image" [alt]="product.nombre" /></td>
             <td class="col-2 text-center">
-                <app-input-integer [(quantity)]="product.quantity" [max]="product.stock" *ngIf="product.stock">
-                </app-input-integer>
-                <button (click)="addToCart" *ngIf="product.stock" type="button"
-                    class="btn btn-primary m-2">Comprar</button>
+                <app-input-integer [(quantity)]="product.quantity" [max]="product.stock" *ngIf="product.stock"></app-input-integer>
+                <button (click)="addToCart" *ngIf="product.stock" class="btn btn-primary m-2" type="button">Comprar</button>
             </td>
         </tr>
     </tbody>

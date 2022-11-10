@@ -1,26 +1,25 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { product } from '../product-list/product';
 
 @Component({
   selector: 'app-input-integer',
   templateUrl: './input-integer.component.html',
   styleUrls: ['./input-integer.component.scss']
 })
+
 export class InputIntegerComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
   @Input()
   quantity!: number;
 
   @Input()
-  max!: Number;
+  max!: number;
 
   @Output()
   quantityChange: EventEmitter<number> = new EventEmitter<number>();
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   upQuantity(): void {
     if (this.quantity < this.max) {

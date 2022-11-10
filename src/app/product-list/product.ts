@@ -1,6 +1,6 @@
-export interface product {
+export interface Product {
     nombre: string;
-    stock: Number;
+    stock: number;
     precio: number;
     image: string;
     clearance: boolean;
