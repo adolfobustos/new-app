@@ -8,10 +8,10 @@ import { Product } from '../product-list/product';
   templateUrl: './product-cart.component.html',
   styleUrls: ['./product-cart.component.scss']
 })
-
 export class ProductCartComponent implements OnInit {
 
   cartList$: Observable<Product[]>;
+  
   constructor(private cart: ProductCartService) {
     this.cartList$ = cart.cartList.asObservable();
   }

@@ -7,7 +7,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of cartList$ | async">
+        <tr *ngFor="let product of (cartList$ | async)">
             <td>{{product.nombre}}</td>
             <td class="text-center">{{product.quantity}}</td>
         </tr>

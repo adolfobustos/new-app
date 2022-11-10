@@ -5,7 +5,6 @@ import { Product } from './product-list/product';
 @Injectable({
   providedIn: 'root'
 })
-
 export class ProductCartService {
 
   private _cartList: Product[] = [];
@@ -16,7 +15,7 @@ export class ProductCartService {
   addToCart(product: Product) {
     let item: any = this._cartList.find((v1) => v1.nombre == product.nombre);
     if (!item) {
-      this._cartList.push({ ...product });
+      this._cartList.push({... product});
     } else {
       item.quantity += product.quantity;
     }
